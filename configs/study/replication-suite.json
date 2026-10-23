@@ -1,0 +1,186 @@
+{
+  "name": "replication-v1",
+  "purpose": "replication",
+  "jobs": [
+    {
+      "label": "replication-eval-matmul-events-1",
+      "config": "configs/study/eval-matmul.json",
+      "mode": "cuda_event",
+      "repetition": 0
+    },
+    {
+      "label": "replication-eval-matmul-events-2",
+      "config": "configs/study/eval-matmul.json",
+      "mode": "cuda_event",
+      "repetition": 1
+    },
+    {
+      "label": "replication-eval-matmul-events-3",
+      "config": "configs/study/eval-matmul.json",
+      "mode": "cuda_event",
+      "repetition": 2
+    },
+    {
+      "label": "replication-eval-matmul-graphs-1",
+      "config": "configs/study/eval-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 0
+    },
+    {
+      "label": "replication-eval-matmul-graphs-2",
+      "config": "configs/study/eval-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 1
+    },
+    {
+      "label": "replication-eval-matmul-graphs-3",
+      "config": "configs/study/eval-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 2
+    },
+    {
+      "label": "replication-eval-attention-events-1",
+      "config": "configs/study/eval-attention.json",
+      "mode": "cuda_event",
+      "repetition": 0
+    },
+    {
+      "label": "replication-eval-attention-events-2",
+      "config": "configs/study/eval-attention.json",
+      "mode": "cuda_event",
+      "repetition": 1
+    },
+    {
+      "label": "replication-eval-attention-events-3",
+      "config": "configs/study/eval-attention.json",
+      "mode": "cuda_event",
+      "repetition": 2
+    },
+    {
+      "label": "replication-eval-attention-graphs-1",
+      "config": "configs/study/eval-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 0
+    },
+    {
+      "label": "replication-eval-attention-graphs-2",
+      "config": "configs/study/eval-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 1
+    },
+    {
+      "label": "replication-eval-attention-graphs-3",
+      "config": "configs/study/eval-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 2
+    },
+    {
+      "label": "replication-eval-conv2d-events-1",
+      "config": "configs/study/eval-conv2d.json",
+      "mode": "cuda_event",
+      "repetition": 0
+    },
+    {
+      "label": "replication-eval-conv2d-events-2",
+      "config": "configs/study/eval-conv2d.json",
+      "mode": "cuda_event",
+      "repetition": 1
+    },
+    {
+      "label": "replication-eval-conv2d-events-3",
+      "config": "configs/study/eval-conv2d.json",
+      "mode": "cuda_event",
+      "repetition": 2
+    },
+    {
+      "label": "replication-eval-conv2d-graphs-1",
+      "config": "configs/study/eval-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 0
+    },
+    {
+      "label": "replication-eval-conv2d-graphs-2",
+      "config": "configs/study/eval-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 1
+    },
+    {
+      "label": "replication-eval-conv2d-graphs-3",
+      "config": "configs/study/eval-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 2
+    },
+    {
+      "label": "replication-eval-transformer-events-1",
+      "config": "configs/study/eval-transformer.json",
+      "mode": "cuda_event",
+      "repetition": 0
+    },
+    {
+      "label": "replication-eval-transformer-events-2",
+      "config": "configs/study/eval-transformer.json",
+      "mode": "cuda_event",
+      "repetition": 1
+    },
+    {
+      "label": "replication-eval-transformer-events-3",
+      "config": "configs/study/eval-transformer.json",
+      "mode": "cuda_event",
+      "repetition": 2
+    },
+    {
+      "label": "replication-eval-transformer-graphs-1",
+      "config": "configs/study/eval-transformer.json",
+      "mode": "cuda_graph",
+      "repetition": 0
+    },
+    {
+      "label": "replication-eval-transformer-graphs-2",
+      "config": "configs/study/eval-transformer.json",
+      "mode": "cuda_graph",
+      "repetition": 1
+    },
+    {
+      "label": "replication-eval-transformer-graphs-3",
+      "config": "configs/study/eval-transformer.json",
+      "mode": "cuda_graph",
+      "repetition": 2
+    },
+    {
+      "label": "replication-eval-cnn-events-1",
+      "config": "configs/study/eval-cnn.json",
+      "mode": "cuda_event",
+      "repetition": 0
+    },
+    {
+      "label": "replication-eval-cnn-events-2",
+      "config": "configs/study/eval-cnn.json",
+      "mode": "cuda_event",
+      "repetition": 1
+    },
+    {
+      "label": "replication-eval-cnn-events-3",
+      "config": "configs/study/eval-cnn.json",
+      "mode": "cuda_event",
+      "repetition": 2
+    },
+    {
+      "label": "replication-eval-cnn-graphs-1",
+      "config": "configs/study/eval-cnn.json",
+      "mode": "cuda_graph",
+      "repetition": 0
+    },
+    {
+      "label": "replication-eval-cnn-graphs-2",
+      "config": "configs/study/eval-cnn.json",
+      "mode": "cuda_graph",
+      "repetition": 1
+    },
+    {
+      "label": "replication-eval-cnn-graphs-3",
+      "config": "configs/study/eval-cnn.json",
+      "mode": "cuda_graph",
+      "repetition": 2
+    }
+  ]
+}

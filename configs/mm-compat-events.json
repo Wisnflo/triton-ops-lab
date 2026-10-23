@@ -1,0 +1,93 @@
+{
+  "name": "mm-compat-events",
+  "seed": 2026,
+  "backends": [
+    "torch",
+    "compile",
+    "compile_mm_compat",
+    "triton_basic",
+    "triton_grouped",
+    "triton_fused"
+  ],
+  "timing": {
+    "warmup": 10,
+    "samples": 20,
+    "repeats": 20,
+    "mode": "cuda_event"
+  },
+  "candidate_budget": 1,
+  "cases": [
+    {
+      "id": "fused-tail-float16",
+      "op": "matmul",
+      "shape": [
+        65,
+        97,
+        49
+      ],
+      "dtype": "float16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "fused-tail-bfloat16",
+      "op": "matmul",
+      "shape": [
+        65,
+        97,
+        49
+      ],
+      "dtype": "bfloat16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "fused-square-float16",
+      "op": "matmul",
+      "shape": [
+        128,
+        128,
+        128
+      ],
+      "dtype": "float16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "fused-square-bfloat16",
+      "op": "matmul",
+      "shape": [
+        128,
+        128,
+        128
+      ],
+      "dtype": "bfloat16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "fused-medium-float16",
+      "op": "matmul",
+      "shape": [
+        256,
+        384,
+        192
+      ],
+      "dtype": "float16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "fused-medium-bfloat16",
+      "op": "matmul",
+      "shape": [
+        256,
+        384,
+        192
+      ],
+      "dtype": "bfloat16",
+      "bias": true,
+      "activation": "gelu"
+    }
+  ]
+}

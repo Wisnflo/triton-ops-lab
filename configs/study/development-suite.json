@@ -1,0 +1,126 @@
+{
+  "name": "development-v1",
+  "purpose": "development",
+  "jobs": [
+    {
+      "label": "gemm-dev-events-1",
+      "config": "configs/study/gemm-dev.json",
+      "mode": "cuda_event",
+      "repetition": 0
+    },
+    {
+      "label": "gemm-dev-graphs-1",
+      "config": "configs/study/gemm-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 0
+    },
+    {
+      "label": "gemm-dev-graphs-2",
+      "config": "configs/study/gemm-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 1
+    },
+    {
+      "label": "gemm-dev-graphs-3",
+      "config": "configs/study/gemm-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 2
+    },
+    {
+      "label": "attention-dev-events-1",
+      "config": "configs/study/attention-dev.json",
+      "mode": "cuda_event",
+      "repetition": 0
+    },
+    {
+      "label": "attention-dev-graphs-1",
+      "config": "configs/study/attention-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 0
+    },
+    {
+      "label": "attention-dev-graphs-2",
+      "config": "configs/study/attention-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 1
+    },
+    {
+      "label": "attention-dev-graphs-3",
+      "config": "configs/study/attention-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 2
+    },
+    {
+      "label": "conv-dev-events-1",
+      "config": "configs/study/conv-dev.json",
+      "mode": "cuda_event",
+      "repetition": 0
+    },
+    {
+      "label": "conv-dev-graphs-1",
+      "config": "configs/study/conv-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 0
+    },
+    {
+      "label": "conv-dev-graphs-2",
+      "config": "configs/study/conv-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 1
+    },
+    {
+      "label": "conv-dev-graphs-3",
+      "config": "configs/study/conv-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 2
+    },
+    {
+      "label": "ablation-dev-events-1",
+      "config": "configs/study/ablation-dev.json",
+      "mode": "cuda_event",
+      "repetition": 0
+    },
+    {
+      "label": "ablation-dev-graphs-1",
+      "config": "configs/study/ablation-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 0
+    },
+    {
+      "label": "ablation-dev-graphs-2",
+      "config": "configs/study/ablation-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 1
+    },
+    {
+      "label": "ablation-dev-graphs-3",
+      "config": "configs/study/ablation-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 2
+    },
+    {
+      "label": "transformer-dev-events-1",
+      "config": "configs/study/transformer-dev.json",
+      "mode": "cuda_event",
+      "repetition": 0
+    },
+    {
+      "label": "transformer-dev-graphs-1",
+      "config": "configs/study/transformer-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 0
+    },
+    {
+      "label": "cnn-dev-events-1",
+      "config": "configs/study/cnn-dev.json",
+      "mode": "cuda_event",
+      "repetition": 0
+    },
+    {
+      "label": "cnn-dev-graphs-1",
+      "config": "configs/study/cnn-dev.json",
+      "mode": "cuda_graph",
+      "repetition": 0
+    }
+  ]
+}

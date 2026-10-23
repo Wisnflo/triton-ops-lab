@@ -1,0 +1,166 @@
+{
+  "name": "attention-dev",
+  "seed": 2026,
+  "backends": [
+    "torch",
+    "compile",
+    "sdpa_math",
+    "sdpa_flash",
+    "sdpa_efficient",
+    "triton_fixed",
+    "triton_search",
+    "triton_pruned"
+  ],
+  "timing": {
+    "warmup": 5,
+    "samples": 15,
+    "repeats": 20
+  },
+  "candidate_budget": 6,
+  "cases": [
+    {
+      "id": "short-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        128,
+        32
+      ],
+      "dtype": "float16",
+      "causal": false
+    },
+    {
+      "id": "short-bfloat16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        128,
+        32
+      ],
+      "dtype": "bfloat16",
+      "causal": false
+    },
+    {
+      "id": "long-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        512,
+        64
+      ],
+      "dtype": "float16",
+      "causal": true
+    },
+    {
+      "id": "long-bfloat16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        512,
+        64
+      ],
+      "dtype": "bfloat16",
+      "causal": true
+    },
+    {
+      "id": "head128-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        1024,
+        128
+      ],
+      "dtype": "float16",
+      "causal": false
+    },
+    {
+      "id": "head128-bfloat16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        1024,
+        128
+      ],
+      "dtype": "bfloat16",
+      "causal": false
+    },
+    {
+      "id": "causal128-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        257,
+        128
+      ],
+      "dtype": "float16",
+      "causal": true
+    },
+    {
+      "id": "causal128-bfloat16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        257,
+        128
+      ],
+      "dtype": "bfloat16",
+      "causal": true
+    },
+    {
+      "id": "batch-float16",
+      "op": "attention",
+      "shape": [
+        2,
+        4,
+        384,
+        64
+      ],
+      "dtype": "float16",
+      "causal": false
+    },
+    {
+      "id": "batch-bfloat16",
+      "op": "attention",
+      "shape": [
+        2,
+        4,
+        384,
+        64
+      ],
+      "dtype": "bfloat16",
+      "causal": false
+    },
+    {
+      "id": "causal-long-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        4,
+        1024,
+        64
+      ],
+      "dtype": "float16",
+      "causal": true
+    },
+    {
+      "id": "causal-long-bfloat16",
+      "op": "attention",
+      "shape": [
+        1,
+        4,
+        1024,
+        64
+      ],
+      "dtype": "bfloat16",
+      "causal": true
+    }
+  ]
+}

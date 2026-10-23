@@ -1,0 +1,125 @@
+{
+  "name": "ablation-dev",
+  "seed": 2026,
+  "backends": [
+    "torch",
+    "triton_fused",
+    "triton_ablation_base",
+    "triton_ablation_bm32",
+    "triton_ablation_bm128",
+    "triton_ablation_bn32",
+    "triton_ablation_bn128",
+    "triton_ablation_bk64",
+    "triton_ablation_warps8",
+    "triton_ablation_stages1",
+    "triton_ablation_stages3",
+    "triton_ablation_stages4",
+    "triton_ablation_group1",
+    "triton_ablation_group4",
+    "triton_ablation_group16"
+  ],
+  "timing": {
+    "warmup": 5,
+    "samples": 15,
+    "repeats": 20
+  },
+  "candidate_budget": 6,
+  "cases": [
+    {
+      "id": "tail-float16",
+      "op": "matmul",
+      "shape": [
+        65,
+        97,
+        49
+      ],
+      "dtype": "float16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "tail-bfloat16",
+      "op": "matmul",
+      "shape": [
+        65,
+        97,
+        49
+      ],
+      "dtype": "bfloat16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "square-float16",
+      "op": "matmul",
+      "shape": [
+        128,
+        128,
+        128
+      ],
+      "dtype": "float16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "square-bfloat16",
+      "op": "matmul",
+      "shape": [
+        128,
+        128,
+        128
+      ],
+      "dtype": "bfloat16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "medium-float16",
+      "op": "matmul",
+      "shape": [
+        256,
+        384,
+        192
+      ],
+      "dtype": "float16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "medium-bfloat16",
+      "op": "matmul",
+      "shape": [
+        256,
+        384,
+        192
+      ],
+      "dtype": "bfloat16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "large-float16",
+      "op": "matmul",
+      "shape": [
+        768,
+        768,
+        512
+      ],
+      "dtype": "float16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "large-bfloat16",
+      "op": "matmul",
+      "shape": [
+        768,
+        768,
+        512
+      ],
+      "dtype": "bfloat16",
+      "bias": true,
+      "activation": "gelu"
+    }
+  ]
+}

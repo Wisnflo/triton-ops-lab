@@ -1,0 +1,197 @@
+{
+  "name": "tune",
+  "seed": 2026,
+  "backends": [
+    "torch",
+    "compile",
+    "triton_basic",
+    "triton_grouped",
+    "triton_fused",
+    "triton_fixed",
+    "triton_search",
+    "triton_pruned",
+    "sdpa_math",
+    "sdpa_flash",
+    "sdpa_efficient"
+  ],
+  "timing": {
+    "warmup": 10,
+    "samples": 30,
+    "repeats": 10
+  },
+  "candidate_budget": 6,
+  "cases": [
+    {
+      "id": "gemm-square-float16",
+      "op": "matmul",
+      "shape": [
+        128,
+        128,
+        128
+      ],
+      "dtype": "float16"
+    },
+    {
+      "id": "gemm-square-bfloat16",
+      "op": "matmul",
+      "shape": [
+        128,
+        128,
+        128
+      ],
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "gemm-skinny-float16",
+      "op": "matmul",
+      "shape": [
+        32,
+        256,
+        128
+      ],
+      "dtype": "float16"
+    },
+    {
+      "id": "gemm-skinny-bfloat16",
+      "op": "matmul",
+      "shape": [
+        32,
+        256,
+        128
+      ],
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "gemm-tail-float16",
+      "op": "matmul",
+      "shape": [
+        65,
+        97,
+        49
+      ],
+      "bias": true,
+      "activation": "gelu",
+      "dtype": "float16"
+    },
+    {
+      "id": "gemm-tail-bfloat16",
+      "op": "matmul",
+      "shape": [
+        65,
+        97,
+        49
+      ],
+      "bias": true,
+      "activation": "gelu",
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "attn-short-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        128,
+        32
+      ],
+      "causal": false,
+      "dtype": "float16"
+    },
+    {
+      "id": "attn-short-bfloat16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        128,
+        32
+      ],
+      "causal": false,
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "attn-long-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        512,
+        64
+      ],
+      "causal": true,
+      "dtype": "float16"
+    },
+    {
+      "id": "attn-long-bfloat16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        512,
+        64
+      ],
+      "causal": true,
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "conv1-float16",
+      "op": "conv2d",
+      "shape": [
+        1,
+        8,
+        16,
+        16,
+        16,
+        1
+      ],
+      "stride": 1,
+      "padding": 0,
+      "dtype": "float16"
+    },
+    {
+      "id": "conv1-bfloat16",
+      "op": "conv2d",
+      "shape": [
+        1,
+        8,
+        16,
+        16,
+        16,
+        1
+      ],
+      "stride": 1,
+      "padding": 0,
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "conv3-float16",
+      "op": "conv2d",
+      "shape": [
+        1,
+        8,
+        17,
+        17,
+        16,
+        3
+      ],
+      "stride": 2,
+      "padding": 1,
+      "dtype": "float16"
+    },
+    {
+      "id": "conv3-bfloat16",
+      "op": "conv2d",
+      "shape": [
+        1,
+        8,
+        17,
+        17,
+        16,
+        3
+      ],
+      "stride": 2,
+      "padding": 1,
+      "dtype": "bfloat16"
+    }
+  ]
+}

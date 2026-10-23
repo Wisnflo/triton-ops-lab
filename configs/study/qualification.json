@@ -1,0 +1,94 @@
+{
+  "name": "qualification",
+  "seed": 2026,
+  "backends": [
+    "triton_fixed",
+    "triton_rule"
+  ],
+  "timing": {
+    "warmup": 3,
+    "samples": 3,
+    "repeats": 3
+  },
+  "candidate_budget": 6,
+  "cases": [
+    {
+      "id": "qualification-matmul-float16",
+      "op": "matmul",
+      "shape": [
+        768,
+        768,
+        512
+      ],
+      "dtype": "float16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "qualification-matmul-bfloat16",
+      "op": "matmul",
+      "shape": [
+        768,
+        768,
+        512
+      ],
+      "dtype": "bfloat16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "qualification-attention-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        1024,
+        128
+      ],
+      "dtype": "float16",
+      "causal": false
+    },
+    {
+      "id": "qualification-attention-bfloat16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        1024,
+        128
+      ],
+      "dtype": "bfloat16",
+      "causal": false
+    },
+    {
+      "id": "qualification-conv2d-float16",
+      "op": "conv2d",
+      "shape": [
+        1,
+        32,
+        24,
+        24,
+        64,
+        3
+      ],
+      "dtype": "float16",
+      "stride": 2,
+      "padding": 1
+    },
+    {
+      "id": "qualification-conv2d-bfloat16",
+      "op": "conv2d",
+      "shape": [
+        1,
+        32,
+        24,
+        24,
+        64,
+        3
+      ],
+      "dtype": "bfloat16",
+      "stride": 2,
+      "padding": 1
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "eval-transformer",
+  "seed": 2026,
+  "backends": [
+    "torch",
+    "compile_mm_compat",
+    "triton_fixed",
+    "triton_rule"
+  ],
+  "timing": {
+    "warmup": 10,
+    "samples": 30,
+    "repeats": 20
+  },
+  "candidate_budget": 6,
+  "cases": [
+    {
+      "id": "transformer-float16",
+      "op": "transformer",
+      "shape": [
+        1,
+        127,
+        64
+      ],
+      "dtype": "float16"
+    },
+    {
+      "id": "transformer-bfloat16",
+      "op": "transformer",
+      "shape": [
+        1,
+        127,
+        64
+      ],
+      "dtype": "bfloat16"
+    }
+  ]
+}

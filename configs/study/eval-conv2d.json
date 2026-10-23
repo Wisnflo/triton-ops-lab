@@ -1,0 +1,81 @@
+{
+  "name": "eval-conv2d",
+  "seed": 2026,
+  "backends": [
+    "torch",
+    "compile",
+    "triton_fixed",
+    "triton_search",
+    "triton_pruned",
+    "triton_rule",
+    "triton_rule_search"
+  ],
+  "timing": {
+    "warmup": 10,
+    "samples": 30,
+    "repeats": 20
+  },
+  "candidate_budget": 6,
+  "cases": [
+    {
+      "id": "conv1-float16",
+      "op": "conv2d",
+      "shape": [
+        1,
+        8,
+        31,
+        29,
+        16,
+        1
+      ],
+      "stride": 2,
+      "padding": 1,
+      "dtype": "float16"
+    },
+    {
+      "id": "conv1-bfloat16",
+      "op": "conv2d",
+      "shape": [
+        1,
+        8,
+        31,
+        29,
+        16,
+        1
+      ],
+      "stride": 2,
+      "padding": 1,
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "conv3-float16",
+      "op": "conv2d",
+      "shape": [
+        1,
+        16,
+        32,
+        32,
+        32,
+        3
+      ],
+      "stride": 1,
+      "padding": 1,
+      "dtype": "float16"
+    },
+    {
+      "id": "conv3-bfloat16",
+      "op": "conv2d",
+      "shape": [
+        1,
+        16,
+        32,
+        32,
+        32,
+        3
+      ],
+      "stride": 1,
+      "padding": 1,
+      "dtype": "bfloat16"
+    }
+  ]
+}

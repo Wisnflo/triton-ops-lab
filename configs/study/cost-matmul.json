@@ -1,0 +1,31 @@
+{
+  "name": "cost-matmul",
+  "seed": 2026,
+  "backends": [
+    "triton_prepared",
+    "triton_prepared_search",
+    "triton_prepared_rule",
+    "triton_prepared_rule_search"
+  ],
+  "timing": {
+    "warmup": 10,
+    "samples": 30,
+    "repeats": 64,
+    "mode": "cuda_graph"
+  },
+  "candidate_budget": 6,
+  "cases": [
+    {
+      "id": "gemm-fused-float16",
+      "op": "matmul",
+      "shape": [
+        129,
+        193,
+        257
+      ],
+      "bias": true,
+      "activation": "gelu",
+      "dtype": "float16"
+    }
+  ]
+}

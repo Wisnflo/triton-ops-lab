@@ -1,0 +1,32 @@
+{
+  "name": "cost-attention",
+  "seed": 2026,
+  "backends": [
+    "triton_fixed",
+    "triton_search",
+    "triton_pruned",
+    "triton_rule",
+    "triton_rule_search"
+  ],
+  "timing": {
+    "warmup": 10,
+    "samples": 30,
+    "repeats": 64,
+    "mode": "cuda_graph"
+  },
+  "candidate_budget": 6,
+  "cases": [
+    {
+      "id": "attn-long-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        2048,
+        128
+      ],
+      "causal": false,
+      "dtype": "float16"
+    }
+  ]
+}

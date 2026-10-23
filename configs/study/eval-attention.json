@@ -1,0 +1,96 @@
+{
+  "name": "eval-attention",
+  "seed": 2026,
+  "backends": [
+    "torch",
+    "compile",
+    "sdpa_math",
+    "sdpa_flash",
+    "sdpa_efficient",
+    "triton_fixed",
+    "triton_search",
+    "triton_pruned",
+    "triton_rule",
+    "triton_rule_search"
+  ],
+  "timing": {
+    "warmup": 10,
+    "samples": 30,
+    "repeats": 20
+  },
+  "candidate_budget": 6,
+  "cases": [
+    {
+      "id": "attn-short-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        65,
+        32
+      ],
+      "causal": false,
+      "dtype": "float16"
+    },
+    {
+      "id": "attn-short-bfloat16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        65,
+        32
+      ],
+      "causal": false,
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "attn-medium-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        257,
+        64
+      ],
+      "causal": true,
+      "dtype": "float16"
+    },
+    {
+      "id": "attn-medium-bfloat16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        257,
+        64
+      ],
+      "causal": true,
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "attn-long-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        2048,
+        128
+      ],
+      "causal": false,
+      "dtype": "float16"
+    },
+    {
+      "id": "attn-long-bfloat16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        2048,
+        128
+      ],
+      "causal": false,
+      "dtype": "bfloat16"
+    }
+  ]
+}

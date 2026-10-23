@@ -1,0 +1,40 @@
+{
+  "name": "eval-cnn",
+  "seed": 2026,
+  "backends": [
+    "torch",
+    "compile",
+    "triton_fixed",
+    "triton_rule"
+  ],
+  "timing": {
+    "warmup": 10,
+    "samples": 30,
+    "repeats": 20
+  },
+  "candidate_budget": 6,
+  "cases": [
+    {
+      "id": "cnn-float16",
+      "op": "cnn",
+      "shape": [
+        1,
+        3,
+        31,
+        29
+      ],
+      "dtype": "float16"
+    },
+    {
+      "id": "cnn-bfloat16",
+      "op": "cnn",
+      "shape": [
+        1,
+        3,
+        31,
+        29
+      ],
+      "dtype": "bfloat16"
+    }
+  ]
+}

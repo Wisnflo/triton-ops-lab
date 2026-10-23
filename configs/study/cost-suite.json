@@ -1,0 +1,762 @@
+{
+  "name": "cost-v1",
+  "purpose": "cost",
+  "jobs": [
+    {
+      "label": "cost-matmul-triton_prepared-1-cold",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_prepared",
+      "cache_group": "cost-matmul-triton_prepared-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-matmul-triton_prepared-1-warm",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_prepared",
+      "cache_group": "cost-matmul-triton_prepared-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_search-1-cold",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_prepared_search",
+      "cache_group": "cost-matmul-triton_prepared_search-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_search-1-warm",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_prepared_search",
+      "cache_group": "cost-matmul-triton_prepared_search-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_rule-1-cold",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_prepared_rule",
+      "cache_group": "cost-matmul-triton_prepared_rule-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_rule-1-warm",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_prepared_rule",
+      "cache_group": "cost-matmul-triton_prepared_rule-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_rule_search-1-cold",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_prepared_rule_search",
+      "cache_group": "cost-matmul-triton_prepared_rule_search-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_rule_search-1-warm",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_prepared_rule_search",
+      "cache_group": "cost-matmul-triton_prepared_rule_search-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-matmul-triton_prepared-2-cold",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_prepared",
+      "cache_group": "cost-matmul-triton_prepared-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-matmul-triton_prepared-2-warm",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_prepared",
+      "cache_group": "cost-matmul-triton_prepared-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_search-2-cold",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_prepared_search",
+      "cache_group": "cost-matmul-triton_prepared_search-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_search-2-warm",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_prepared_search",
+      "cache_group": "cost-matmul-triton_prepared_search-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_rule-2-cold",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_prepared_rule",
+      "cache_group": "cost-matmul-triton_prepared_rule-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_rule-2-warm",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_prepared_rule",
+      "cache_group": "cost-matmul-triton_prepared_rule-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_rule_search-2-cold",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_prepared_rule_search",
+      "cache_group": "cost-matmul-triton_prepared_rule_search-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_rule_search-2-warm",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_prepared_rule_search",
+      "cache_group": "cost-matmul-triton_prepared_rule_search-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-matmul-triton_prepared-3-cold",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_prepared",
+      "cache_group": "cost-matmul-triton_prepared-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-matmul-triton_prepared-3-warm",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_prepared",
+      "cache_group": "cost-matmul-triton_prepared-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_search-3-cold",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_prepared_search",
+      "cache_group": "cost-matmul-triton_prepared_search-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_search-3-warm",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_prepared_search",
+      "cache_group": "cost-matmul-triton_prepared_search-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_rule-3-cold",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_prepared_rule",
+      "cache_group": "cost-matmul-triton_prepared_rule-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_rule-3-warm",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_prepared_rule",
+      "cache_group": "cost-matmul-triton_prepared_rule-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_rule_search-3-cold",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_prepared_rule_search",
+      "cache_group": "cost-matmul-triton_prepared_rule_search-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-matmul-triton_prepared_rule_search-3-warm",
+      "config": "configs/study/cost-matmul.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_prepared_rule_search",
+      "cache_group": "cost-matmul-triton_prepared_rule_search-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_fixed-1-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_fixed",
+      "cache_group": "cost-attention-triton_fixed-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_fixed-1-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_fixed",
+      "cache_group": "cost-attention-triton_fixed-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_search-1-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_search",
+      "cache_group": "cost-attention-triton_search-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_search-1-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_search",
+      "cache_group": "cost-attention-triton_search-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_pruned-1-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_pruned",
+      "cache_group": "cost-attention-triton_pruned-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_pruned-1-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_pruned",
+      "cache_group": "cost-attention-triton_pruned-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_rule-1-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_rule",
+      "cache_group": "cost-attention-triton_rule-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_rule-1-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_rule",
+      "cache_group": "cost-attention-triton_rule-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_rule_search-1-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_rule_search",
+      "cache_group": "cost-attention-triton_rule_search-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_rule_search-1-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_rule_search",
+      "cache_group": "cost-attention-triton_rule_search-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_fixed-2-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_fixed",
+      "cache_group": "cost-attention-triton_fixed-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_fixed-2-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_fixed",
+      "cache_group": "cost-attention-triton_fixed-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_search-2-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_search",
+      "cache_group": "cost-attention-triton_search-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_search-2-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_search",
+      "cache_group": "cost-attention-triton_search-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_pruned-2-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_pruned",
+      "cache_group": "cost-attention-triton_pruned-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_pruned-2-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_pruned",
+      "cache_group": "cost-attention-triton_pruned-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_rule-2-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_rule",
+      "cache_group": "cost-attention-triton_rule-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_rule-2-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_rule",
+      "cache_group": "cost-attention-triton_rule-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_rule_search-2-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_rule_search",
+      "cache_group": "cost-attention-triton_rule_search-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_rule_search-2-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_rule_search",
+      "cache_group": "cost-attention-triton_rule_search-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_fixed-3-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_fixed",
+      "cache_group": "cost-attention-triton_fixed-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_fixed-3-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_fixed",
+      "cache_group": "cost-attention-triton_fixed-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_search-3-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_search",
+      "cache_group": "cost-attention-triton_search-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_search-3-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_search",
+      "cache_group": "cost-attention-triton_search-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_pruned-3-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_pruned",
+      "cache_group": "cost-attention-triton_pruned-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_pruned-3-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_pruned",
+      "cache_group": "cost-attention-triton_pruned-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_rule-3-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_rule",
+      "cache_group": "cost-attention-triton_rule-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_rule-3-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_rule",
+      "cache_group": "cost-attention-triton_rule-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-attention-triton_rule_search-3-cold",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_rule_search",
+      "cache_group": "cost-attention-triton_rule_search-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-attention-triton_rule_search-3-warm",
+      "config": "configs/study/cost-attention.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_rule_search",
+      "cache_group": "cost-attention-triton_rule_search-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_fixed-1-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_fixed",
+      "cache_group": "cost-conv2d-triton_fixed-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_fixed-1-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_fixed",
+      "cache_group": "cost-conv2d-triton_fixed-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_search-1-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_search",
+      "cache_group": "cost-conv2d-triton_search-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_search-1-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_search",
+      "cache_group": "cost-conv2d-triton_search-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_pruned-1-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_pruned",
+      "cache_group": "cost-conv2d-triton_pruned-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_pruned-1-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_pruned",
+      "cache_group": "cost-conv2d-triton_pruned-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_rule-1-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_rule",
+      "cache_group": "cost-conv2d-triton_rule-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_rule-1-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_rule",
+      "cache_group": "cost-conv2d-triton_rule-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_rule_search-1-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_rule_search",
+      "cache_group": "cost-conv2d-triton_rule_search-1",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_rule_search-1-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 0,
+      "only_backend": "triton_rule_search",
+      "cache_group": "cost-conv2d-triton_rule_search-1",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_fixed-2-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_fixed",
+      "cache_group": "cost-conv2d-triton_fixed-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_fixed-2-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_fixed",
+      "cache_group": "cost-conv2d-triton_fixed-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_search-2-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_search",
+      "cache_group": "cost-conv2d-triton_search-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_search-2-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_search",
+      "cache_group": "cost-conv2d-triton_search-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_pruned-2-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_pruned",
+      "cache_group": "cost-conv2d-triton_pruned-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_pruned-2-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_pruned",
+      "cache_group": "cost-conv2d-triton_pruned-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_rule-2-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_rule",
+      "cache_group": "cost-conv2d-triton_rule-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_rule-2-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_rule",
+      "cache_group": "cost-conv2d-triton_rule-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_rule_search-2-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_rule_search",
+      "cache_group": "cost-conv2d-triton_rule_search-2",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_rule_search-2-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 1,
+      "only_backend": "triton_rule_search",
+      "cache_group": "cost-conv2d-triton_rule_search-2",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_fixed-3-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_fixed",
+      "cache_group": "cost-conv2d-triton_fixed-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_fixed-3-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_fixed",
+      "cache_group": "cost-conv2d-triton_fixed-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_search-3-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_search",
+      "cache_group": "cost-conv2d-triton_search-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_search-3-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_search",
+      "cache_group": "cost-conv2d-triton_search-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_pruned-3-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_pruned",
+      "cache_group": "cost-conv2d-triton_pruned-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_pruned-3-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_pruned",
+      "cache_group": "cost-conv2d-triton_pruned-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_rule-3-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_rule",
+      "cache_group": "cost-conv2d-triton_rule-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_rule-3-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_rule",
+      "cache_group": "cost-conv2d-triton_rule-3",
+      "cache_state": "warm"
+    },
+    {
+      "label": "cost-conv2d-triton_rule_search-3-cold",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_rule_search",
+      "cache_group": "cost-conv2d-triton_rule_search-3",
+      "cache_state": "cold"
+    },
+    {
+      "label": "cost-conv2d-triton_rule_search-3-warm",
+      "config": "configs/study/cost-conv2d.json",
+      "mode": "cuda_graph",
+      "repetition": 2,
+      "only_backend": "triton_rule_search",
+      "cache_group": "cost-conv2d-triton_rule_search-3",
+      "cache_state": "warm"
+    }
+  ]
+}

@@ -1,0 +1,2359 @@
+{
+  "policy_sha256": "b3f82ad1622fd32cd8c936923e4e21e17ce9e74bb50d8a936401951c3eefca3d",
+  "eval_config_sha256": "6721faf7793870109c7bfaaacfdfffcd8bac526feeb613ce98ff79b2e9011dc0",
+  "note": "CPU-only inference sealed before heldout timing; no evaluation performance labels.",
+  "decisions": [
+    {
+      "case": {
+        "id": "gemm-square-float16",
+        "op": "matmul",
+        "shape": [
+          256,
+          256,
+          256
+        ],
+        "dtype": "float16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.0137548833411492
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0861301075592353
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.1432023772005826
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.2613722325497454
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.318628668693042
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.3636665035938336
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 64,
+            "bn": 64,
+            "bk": 64,
+            "warps": 4,
+            "stages": 3
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 64,
+          "bn": 64,
+          "bk": 64,
+          "warps": 4,
+          "stages": 3
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "gemm-square-bfloat16",
+        "op": "matmul",
+        "shape": [
+          256,
+          256,
+          256
+        ],
+        "dtype": "bfloat16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.0135959957291907
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.095507128115076
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.150147129078043
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.2877007617362544
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.3506856234465099
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.3938552091205911
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 64,
+            "bn": 64,
+            "bk": 64,
+            "warps": 4,
+            "stages": 3
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 64,
+          "bn": 64,
+          "bk": 64,
+          "warps": 4,
+          "stages": 3
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "gemm-large-float16",
+        "op": "matmul",
+        "shape": [
+          1024,
+          1024,
+          1024
+        ],
+        "dtype": "float16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.0037634801265154
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0742627084905645
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.1015064113919828
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.1643878364127078
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.2035845260248603
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.736717331016594
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 64,
+            "bn": 64,
+            "bk": 64,
+            "warps": 4,
+            "stages": 3
+          },
+          {
+            "bm": 64,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 64,
+          "bn": 64,
+          "bk": 64,
+          "warps": 4,
+          "stages": 3
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "gemm-large-bfloat16",
+        "op": "matmul",
+        "shape": [
+          1024,
+          1024,
+          1024
+        ],
+        "dtype": "bfloat16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.0037200068119752
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0770030753617779
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.114877675825552
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.1757543027260997
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.2102979054577265
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.7487902235114448
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 64,
+            "bn": 64,
+            "bk": 64,
+            "warps": 4,
+            "stages": 3
+          },
+          {
+            "bm": 64,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 64,
+          "bn": 64,
+          "bk": 64,
+          "warps": 4,
+          "stages": 3
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "gemm-skinny-float16",
+        "op": "matmul",
+        "shape": [
+          16,
+          512,
+          256
+        ],
+        "dtype": "float16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.1142910930976595
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.1323574214462506
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.3102728154421732
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.393409539519988
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.4676149222317418
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 32,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 64,
+            "bn": 64,
+            "bk": 64,
+            "warps": 4,
+            "stages": 3
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 32,
+          "bk": 32,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "gemm-skinny-bfloat16",
+        "op": "matmul",
+        "shape": [
+          16,
+          512,
+          256
+        ],
+        "dtype": "bfloat16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.1107925684578013
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.129278047399712
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.3072597104767856
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.3896575882575593
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.4623471815999431
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 32,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 64,
+            "bn": 64,
+            "bk": 64,
+            "warps": 4,
+            "stages": 3
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 32,
+          "bk": 32,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "gemm-tall-float16",
+        "op": "matmul",
+        "shape": [
+          511,
+          33,
+          129
+        ],
+        "transpose": true,
+        "dtype": "float16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.2177140460269669
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.3556911021643907
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.4710951660611766
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.8061002543682962
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.8376548463184585
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 32,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 32,
+          "bk": 32,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "gemm-tall-bfloat16",
+        "op": "matmul",
+        "shape": [
+          511,
+          33,
+          129
+        ],
+        "transpose": true,
+        "dtype": "bfloat16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.2181275013961606
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.354392800437739
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.4726655153250239
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.8080431840958913
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.8402635521814696
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 32,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 32,
+          "bk": 32,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "gemm-fused-float16",
+        "op": "matmul",
+        "shape": [
+          129,
+          193,
+          257
+        ],
+        "bias": true,
+        "activation": "gelu",
+        "dtype": "float16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0162153044995985
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.1202674806351434
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.1373904251331832
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.349606641687384
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.489051608449787
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.5297674105883454
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 32,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 32,
+          "bk": 32,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "gemm-fused-bfloat16",
+        "op": "matmul",
+        "shape": [
+          129,
+          193,
+          257
+        ],
+        "bias": true,
+        "activation": "gelu",
+        "dtype": "bfloat16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0193572820396628
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.1257686506800255
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.136127517280482
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.366791946603617
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.506379076591261
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.5486204619414534
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 32,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 32,
+          "bk": 32,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "attn-short-float16",
+        "op": "attention",
+        "shape": [
+          1,
+          2,
+          65,
+          32
+        ],
+        "causal": false,
+        "dtype": "float16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.056431817458536
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0571322543665376
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.3014499860760487
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.3875956675293812
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "warps": 8,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.3924041649374523
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 64,
+            "bn": 64,
+            "warps": 4,
+            "stages": 3
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 32,
+            "bn": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 64,
+          "bn": 64,
+          "warps": 4,
+          "stages": 3
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "attn-short-bfloat16",
+        "op": "attention",
+        "shape": [
+          1,
+          2,
+          65,
+          32
+        ],
+        "causal": false,
+        "dtype": "bfloat16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0481018716759873
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.0570885985896008
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.2838532659622297
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.3753014782726862
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "warps": 8,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.3776819874067237
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 64,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 64,
+            "bn": 64,
+            "warps": 4,
+            "stages": 3
+          },
+          {
+            "bm": 32,
+            "bn": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 64,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "attn-medium-float16",
+        "op": "attention",
+        "shape": [
+          1,
+          2,
+          257,
+          64
+        ],
+        "causal": true,
+        "dtype": "float16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0446966274793468
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.2062639595788733
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.361411129515438
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "warps": 8,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.501773482369947
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.5283269855785244
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 64,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 64,
+            "bn": 64,
+            "warps": 4,
+            "stages": 3
+          },
+          {
+            "bm": 32,
+            "bn": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 64,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "attn-medium-bfloat16",
+        "op": "attention",
+        "shape": [
+          1,
+          2,
+          257,
+          64
+        ],
+        "causal": true,
+        "dtype": "bfloat16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0421241652373283
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.2086645605655355
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.3547587537484636
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "warps": 8,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.496609824491155
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.523982413902266
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 64,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 64,
+            "bn": 64,
+            "warps": 4,
+            "stages": 3
+          },
+          {
+            "bm": 32,
+            "bn": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 64,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "attn-long-float16",
+        "op": "attention",
+        "shape": [
+          1,
+          2,
+          2048,
+          128
+        ],
+        "causal": false,
+        "dtype": "float16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.0228747801973535
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0269784287860062
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.2841539800658415
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "warps": 8,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.284294838737713
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.425974697375645
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 64,
+            "bn": 64,
+            "warps": 4,
+            "stages": 3
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 32,
+            "bn": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 64,
+          "bn": 64,
+          "warps": 4,
+          "stages": 3
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "attn-long-bfloat16",
+        "op": "attention",
+        "shape": [
+          1,
+          2,
+          2048,
+          128
+        ],
+        "causal": false,
+        "dtype": "bfloat16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0251539486584365
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.0354163040303503
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "warps": 8,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.293127245338209
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.2995084152691843
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.4435121083307962
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 64,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 64,
+            "bn": 64,
+            "warps": 4,
+            "stages": 3
+          },
+          {
+            "bm": 32,
+            "bn": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 64,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "conv1-float16",
+        "op": "conv2d",
+        "shape": [
+          1,
+          8,
+          31,
+          29,
+          16,
+          1
+        ],
+        "stride": 2,
+        "padding": 1,
+        "dtype": "float16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0508415297126996
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.2105791968962367
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.3471132146481888
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.4456412673228236
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.4758268427729424
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 32,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 32,
+          "bk": 32,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "conv1-bfloat16",
+        "op": "conv2d",
+        "shape": [
+          1,
+          8,
+          31,
+          29,
+          16,
+          1
+        ],
+        "stride": 2,
+        "padding": 1,
+        "dtype": "bfloat16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0510548570386322
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.217316736594814
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.352263255275199
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.445604591454034
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.476830821892156
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 32,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 32,
+          "bk": 32,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "conv3-float16",
+        "op": "conv2d",
+        "shape": [
+          1,
+          16,
+          32,
+          32,
+          32,
+          3
+        ],
+        "stride": 1,
+        "padding": 1,
+        "dtype": "float16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.2922910170978625
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.4575471100089845
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.8030124999010735
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.8608557524610652
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 2.821396272406143
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 32,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 32,
+          "bk": 32,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "conv3-bfloat16",
+        "op": "conv2d",
+        "shape": [
+          1,
+          16,
+          32,
+          32,
+          32,
+          3
+        ],
+        "stride": 1,
+        "padding": 1,
+        "dtype": "bfloat16"
+      },
+      "decision": {
+        "ranking": [
+          {
+            "config": {
+              "bm": 32,
+              "bn": 32,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.0
+          },
+          {
+            "config": {
+              "bm": 32,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.2884917835467848
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 64,
+              "warps": 4,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.460353717967899
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 128,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 1.8080596422688098
+          },
+          {
+            "config": {
+              "bm": 64,
+              "bn": 64,
+              "bk": 32,
+              "warps": 4,
+              "stages": 2
+            },
+            "predicted_relative_cost": 1.8697322535287961
+          },
+          {
+            "config": {
+              "bm": 128,
+              "bn": 64,
+              "bk": 32,
+              "warps": 8,
+              "stages": 3
+            },
+            "predicted_relative_cost": 2.8158499907471164
+          }
+        ],
+        "shortlist": [
+          {
+            "bm": 32,
+            "bn": 32,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          },
+          {
+            "bm": 32,
+            "bn": 64,
+            "bk": 32,
+            "warps": 4,
+            "stages": 2
+          }
+        ],
+        "selected": {
+          "bm": 32,
+          "bn": 32,
+          "bk": 32,
+          "warps": 4,
+          "stages": 2
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "transformer-float16",
+        "op": "transformer",
+        "shape": [
+          1,
+          127,
+          64
+        ],
+        "dtype": "float16"
+      },
+      "decision": {
+        "plan": {
+          "input_shape": [
+            1,
+            127,
+            64
+          ],
+          "dtype": "float16",
+          "layers": {
+            "qkv": {
+              "case": {
+                "op": "matmul",
+                "shape": [
+                  127,
+                  192,
+                  64
+                ],
+                "dtype": "float16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 32,
+                "bk": 32,
+                "warps": 4,
+                "stages": 2
+              }
+            },
+            "attention": {
+              "case": {
+                "op": "attention",
+                "shape": [
+                  1,
+                  2,
+                  127,
+                  32
+                ],
+                "causal": true,
+                "dtype": "float16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 64,
+                "warps": 4,
+                "stages": 2
+              }
+            },
+            "proj": {
+              "case": {
+                "op": "matmul",
+                "shape": [
+                  127,
+                  64,
+                  64
+                ],
+                "dtype": "float16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 32,
+                "bk": 32,
+                "warps": 4,
+                "stages": 2
+              }
+            },
+            "up": {
+              "case": {
+                "op": "matmul",
+                "shape": [
+                  127,
+                  128,
+                  64
+                ],
+                "bias": true,
+                "activation": "gelu",
+                "dtype": "float16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 32,
+                "bk": 32,
+                "warps": 4,
+                "stages": 2
+              }
+            },
+            "down": {
+              "case": {
+                "op": "matmul",
+                "shape": [
+                  127,
+                  64,
+                  128
+                ],
+                "dtype": "float16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 32,
+                "bk": 32,
+                "warps": 4,
+                "stages": 2
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "transformer-bfloat16",
+        "op": "transformer",
+        "shape": [
+          1,
+          127,
+          64
+        ],
+        "dtype": "bfloat16"
+      },
+      "decision": {
+        "plan": {
+          "input_shape": [
+            1,
+            127,
+            64
+          ],
+          "dtype": "bfloat16",
+          "layers": {
+            "qkv": {
+              "case": {
+                "op": "matmul",
+                "shape": [
+                  127,
+                  192,
+                  64
+                ],
+                "dtype": "bfloat16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 32,
+                "bk": 32,
+                "warps": 4,
+                "stages": 2
+              }
+            },
+            "attention": {
+              "case": {
+                "op": "attention",
+                "shape": [
+                  1,
+                  2,
+                  127,
+                  32
+                ],
+                "causal": true,
+                "dtype": "bfloat16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 64,
+                "warps": 4,
+                "stages": 2
+              }
+            },
+            "proj": {
+              "case": {
+                "op": "matmul",
+                "shape": [
+                  127,
+                  64,
+                  64
+                ],
+                "dtype": "bfloat16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 32,
+                "bk": 32,
+                "warps": 4,
+                "stages": 2
+              }
+            },
+            "up": {
+              "case": {
+                "op": "matmul",
+                "shape": [
+                  127,
+                  128,
+                  64
+                ],
+                "bias": true,
+                "activation": "gelu",
+                "dtype": "bfloat16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 32,
+                "bk": 32,
+                "warps": 4,
+                "stages": 2
+              }
+            },
+            "down": {
+              "case": {
+                "op": "matmul",
+                "shape": [
+                  127,
+                  64,
+                  128
+                ],
+                "dtype": "bfloat16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 32,
+                "bk": 32,
+                "warps": 4,
+                "stages": 2
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "cnn-float16",
+        "op": "cnn",
+        "shape": [
+          1,
+          3,
+          31,
+          29
+        ],
+        "dtype": "float16"
+      },
+      "decision": {
+        "plan": {
+          "input_shape": [
+            1,
+            3,
+            31,
+            29
+          ],
+          "dtype": "float16",
+          "layers": {
+            "conv1": {
+              "case": {
+                "op": "conv2d",
+                "shape": [
+                  1,
+                  3,
+                  31,
+                  29,
+                  8,
+                  3
+                ],
+                "stride": 1,
+                "padding": 1,
+                "dtype": "float16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 32,
+                "bk": 32,
+                "warps": 4,
+                "stages": 2
+              }
+            },
+            "conv2": {
+              "case": {
+                "op": "conv2d",
+                "shape": [
+                  1,
+                  8,
+                  31,
+                  29,
+                  8,
+                  1
+                ],
+                "stride": 2,
+                "padding": 0,
+                "dtype": "float16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 32,
+                "bk": 32,
+                "warps": 4,
+                "stages": 2
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": {
+        "id": "cnn-bfloat16",
+        "op": "cnn",
+        "shape": [
+          1,
+          3,
+          31,
+          29
+        ],
+        "dtype": "bfloat16"
+      },
+      "decision": {
+        "plan": {
+          "input_shape": [
+            1,
+            3,
+            31,
+            29
+          ],
+          "dtype": "bfloat16",
+          "layers": {
+            "conv1": {
+              "case": {
+                "op": "conv2d",
+                "shape": [
+                  1,
+                  3,
+                  31,
+                  29,
+                  8,
+                  3
+                ],
+                "stride": 1,
+                "padding": 1,
+                "dtype": "bfloat16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 32,
+                "bk": 32,
+                "warps": 4,
+                "stages": 2
+              }
+            },
+            "conv2": {
+              "case": {
+                "op": "conv2d",
+                "shape": [
+                  1,
+                  8,
+                  31,
+                  29,
+                  8,
+                  1
+                ],
+                "stride": 2,
+                "padding": 0,
+                "dtype": "bfloat16"
+              },
+              "config": {
+                "bm": 32,
+                "bn": 32,
+                "bk": 32,
+                "warps": 4,
+                "stages": 2
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

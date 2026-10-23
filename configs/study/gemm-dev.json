@@ -1,0 +1,155 @@
+{
+  "name": "gemm-dev",
+  "seed": 2026,
+  "backends": [
+    "torch",
+    "compile_mm_compat",
+    "triton_fused",
+    "triton_prepared",
+    "triton_search",
+    "triton_pruned",
+    "triton_prepared_search"
+  ],
+  "timing": {
+    "warmup": 5,
+    "samples": 15,
+    "repeats": 20
+  },
+  "candidate_budget": 6,
+  "cases": [
+    {
+      "id": "square-float16",
+      "op": "matmul",
+      "shape": [
+        128,
+        128,
+        128
+      ],
+      "dtype": "float16"
+    },
+    {
+      "id": "square-bfloat16",
+      "op": "matmul",
+      "shape": [
+        128,
+        128,
+        128
+      ],
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "skinny-float16",
+      "op": "matmul",
+      "shape": [
+        32,
+        256,
+        128
+      ],
+      "dtype": "float16"
+    },
+    {
+      "id": "skinny-bfloat16",
+      "op": "matmul",
+      "shape": [
+        32,
+        256,
+        128
+      ],
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "tail-float16",
+      "op": "matmul",
+      "shape": [
+        65,
+        97,
+        49
+      ],
+      "dtype": "float16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "tail-bfloat16",
+      "op": "matmul",
+      "shape": [
+        65,
+        97,
+        49
+      ],
+      "dtype": "bfloat16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "medium-float16",
+      "op": "matmul",
+      "shape": [
+        256,
+        384,
+        192
+      ],
+      "dtype": "float16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "medium-bfloat16",
+      "op": "matmul",
+      "shape": [
+        256,
+        384,
+        192
+      ],
+      "dtype": "bfloat16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "large-float16",
+      "op": "matmul",
+      "shape": [
+        768,
+        768,
+        512
+      ],
+      "dtype": "float16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "large-bfloat16",
+      "op": "matmul",
+      "shape": [
+        768,
+        768,
+        512
+      ],
+      "dtype": "bfloat16",
+      "bias": true,
+      "activation": "gelu"
+    },
+    {
+      "id": "transpose-float16",
+      "op": "matmul",
+      "shape": [
+        97,
+        65,
+        129
+      ],
+      "dtype": "float16",
+      "transpose": true
+    },
+    {
+      "id": "transpose-bfloat16",
+      "op": "matmul",
+      "shape": [
+        97,
+        65,
+        129
+      ],
+      "dtype": "bfloat16",
+      "transpose": true
+    }
+  ]
+}

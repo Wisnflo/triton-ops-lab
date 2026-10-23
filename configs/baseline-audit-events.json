@@ -1,0 +1,116 @@
+{
+  "name": "baseline-audit-events",
+  "seed": 2026,
+  "backends": [
+    "torch",
+    "compile",
+    "triton_fixed"
+  ],
+  "timing": {
+    "warmup": 10,
+    "samples": 20,
+    "repeats": 20,
+    "mode": "cuda_event"
+  },
+  "candidate_budget": 1,
+  "cases": [
+    {
+      "id": "gemm-square-float16",
+      "op": "matmul",
+      "shape": [
+        128,
+        128,
+        128
+      ],
+      "dtype": "float16"
+    },
+    {
+      "id": "gemm-square-bfloat16",
+      "op": "matmul",
+      "shape": [
+        128,
+        128,
+        128
+      ],
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "gemm-tail-float16",
+      "op": "matmul",
+      "shape": [
+        65,
+        97,
+        49
+      ],
+      "bias": true,
+      "activation": "gelu",
+      "dtype": "float16"
+    },
+    {
+      "id": "gemm-tail-bfloat16",
+      "op": "matmul",
+      "shape": [
+        65,
+        97,
+        49
+      ],
+      "bias": true,
+      "activation": "gelu",
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "attn-long-float16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        512,
+        64
+      ],
+      "causal": true,
+      "dtype": "float16"
+    },
+    {
+      "id": "attn-long-bfloat16",
+      "op": "attention",
+      "shape": [
+        1,
+        2,
+        512,
+        64
+      ],
+      "causal": true,
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "conv3-float16",
+      "op": "conv2d",
+      "shape": [
+        1,
+        8,
+        17,
+        17,
+        16,
+        3
+      ],
+      "stride": 2,
+      "padding": 1,
+      "dtype": "float16"
+    },
+    {
+      "id": "conv3-bfloat16",
+      "op": "conv2d",
+      "shape": [
+        1,
+        8,
+        17,
+        17,
+        16,
+        3
+      ],
+      "stride": 2,
+      "padding": 1,
+      "dtype": "bfloat16"
+    }
+  ]
+}

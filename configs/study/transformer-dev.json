@@ -1,0 +1,57 @@
+{
+  "name": "transformer-dev",
+  "seed": 2026,
+  "backends": [
+    "torch",
+    "compile_mm_compat",
+    "triton_fixed"
+  ],
+  "timing": {
+    "warmup": 5,
+    "samples": 15,
+    "repeats": 20
+  },
+  "candidate_budget": 6,
+  "cases": [
+    {
+      "id": "short-float16",
+      "op": "transformer",
+      "shape": [
+        1,
+        63,
+        64
+      ],
+      "dtype": "float16"
+    },
+    {
+      "id": "short-bfloat16",
+      "op": "transformer",
+      "shape": [
+        1,
+        63,
+        64
+      ],
+      "dtype": "bfloat16"
+    },
+    {
+      "id": "batch-float16",
+      "op": "transformer",
+      "shape": [
+        2,
+        255,
+        128
+      ],
+      "dtype": "float16"
+    },
+    {
+      "id": "batch-bfloat16",
+      "op": "transformer",
+      "shape": [
+        2,
+        255,
+        128
+      ],
+      "dtype": "bfloat16"
+    }
+  ]
+}
