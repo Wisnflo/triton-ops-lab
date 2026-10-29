@@ -1,4 +1,4 @@
-"""Online softmax attention; algorithm attribution in docs/sources.md."""
+"""Online softmax attention; algorithm attribution in docs/project.md."""
 
 import math
 

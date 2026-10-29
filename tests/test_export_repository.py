@@ -39,7 +39,7 @@ def test_redaction_keeps_artifact_links_explicitly_private():
     source = f"# History\n\n[raw]({home})\n\n[notebook]({notebook})\n\nBalance: {usage}\n"
     result = publisher.sanitize_document("docs/history.md", source)
     publisher.validate_file("docs/history.md", result.encode())
-    assert "[raw](data-availability.md)" in result
+    assert "[raw](project.md#7-结果管理与审计)" in result
     assert "12.34" not in result and "private-id" not in result
 
 

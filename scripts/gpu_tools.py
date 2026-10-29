@@ -58,7 +58,7 @@ def main():
         root = output_root(args.output_root)
         tool = {"sanitize": "compute-sanitizer", "profile": "ncu"}.get(args.action)
         if tool and not shutil.which(tool):
-            raise RuntimeError(f"{tool} is not installed; see docs/remote.md")
+            raise RuntimeError(f"{tool} is not installed; see docs/project.md")
         path = new_run(root, args.action)
         env = dict(os.environ, TRITON_LAB_OUTPUT_ROOT=str(root))
         env.pop("TRITON_LAB_CAPTURE_DIR", None)

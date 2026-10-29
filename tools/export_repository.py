@@ -81,14 +81,16 @@ def validate_file(name, raw):
 
 
 def sanitize_document(name, text):
-    availability = "docs/data-availability.md" if name == "README.md" else "data-availability.md"
+    reference = (
+        "docs/project.md#7-结果管理与审计" if name == "README.md" else "project.md#7-结果管理与审计"
+    )
 
     def link(match):
         label, target = match.groups()
         if re.search(r"colab\.research\.google\.com/drive/", target):
-            return label + "（私人地址不随快照提供）"
+            return label
         if target.startswith("/Users/") or "../storage/" in target:
-            return f"[{label}]({availability})"
+            return f"[{label}]({reference})"
         return match.group()
 
     text = re.sub(r"\[([^\]]+)\]\(([^)\n]+)\)", link, text)
@@ -96,32 +98,11 @@ def sanitize_document(name, text):
     text = re.sub(
         r"https://colab\.research\.google\.com/drive/[A-Za-z0-9_-]+", "<private-notebook>", text
     )
-    paragraphs = []
-    for paragraph in text.split("\n\n"):
-        if re.search(r"\bCU\b|Gemini|余额|订阅", paragraph):
-            paragraphs.append("账号、订阅和算力余额记录仅在本地保留。")
-        else:
-            paragraphs.append(paragraph)
-    text = "\n\n".join(paragraphs)
-    if name == "docs/roadmap.md":
-        text = re.sub(
-            r"## 预算上限[^\n]*\n.*?(?=## 研究决策门槛)",
-            "## 算力资源\n\n按实际实验阶段安排资源；个人预算和账号信息不随快照提供。\n\n",
-            text,
-            flags=re.S,
-        )
-    if name == "docs/plan.md":
-        text = text.replace("新增算力预算不超过 500 元", "按阶段配置算力资源")
-        text = text.replace("500 元预算分配", "按阶段安排算力")
-    if name == "README.md":
-        notice = (
-            "> 本仓库是脱敏源码快照。原始 Git 历史、GPU 实验包和私人 notebook 未上传。"
-            "历史实测对应本地冻结版本；当前源码可用于重新运行新实验。"
-            "参见[数据可用性说明](docs/data-availability.md)。\n\n"
-        )
-        first, remaining = text.split("\n", 1)
-        text = first + "\n\n" + notice + remaining.lstrip("\n")
-    return text
+    return "\n\n".join(
+        paragraph
+        for paragraph in text.split("\n\n")
+        if not re.search(r"\bCU\b|Gemini|余额|订阅", paragraph)
+    )
 
 
 def export(root, output):

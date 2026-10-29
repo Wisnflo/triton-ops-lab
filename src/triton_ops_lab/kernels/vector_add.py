@@ -1,4 +1,4 @@
-"""Elementwise grid, following the Triton programming model (see docs/sources.md)."""
+"""Elementwise grid, following the Triton programming model (see docs/project.md)."""
 
 import torch
 import triton
